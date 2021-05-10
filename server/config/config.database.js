@@ -11,7 +11,7 @@ mongoose.connect(`mongodb://localhost/${database}`, {
     .then(res => console.log("You are now in the mainframe!!!"))
     .catch(err => console.log(`Uh oh something went wrong ${err}`))
 
-require(`./server/config/config.database`); //connecting the config file here
+// require("./server/config/config.database"); //connecting the config file here (APPARENTLY I DID NOT NEED THIS)
 
 // Note: I CAN go to the package.json file and change the start scripts to "nodemon server.js" if need be
 

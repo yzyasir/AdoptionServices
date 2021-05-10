@@ -14,4 +14,11 @@ const express = require('express'),
 app.use(cors());
 app.use(express.json());
 
+// Step 10)
 // After doing this, we then do our config and routes, and then import here
+require("./server/config/config.database");
+require("./server/routes/adoption.routes")(app); 
+//if I had multiple route files then I have to passs in an (app) for every single one in the require statements in the server
+
+// Step 11) 
+// Now check if it all startes using "npm start"

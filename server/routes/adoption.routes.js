@@ -13,3 +13,6 @@ module.exports = (app) => {
     app.delete("/api/deleteOne/pet/:id", AdoptionController.destroy) // when a pet is adopted we will of course delete the posting
     app.put("/api/update/pet/:id", AdoptionController.updatePet) // can edit the page if needed
 }
+
+// Step 10)
+// Go to the server and import whats necessary 
