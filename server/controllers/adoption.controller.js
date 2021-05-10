@@ -5,34 +5,39 @@ const Adoption = require("../models/adoption.model");
 // -----------------------------------------------------------------------------------------------
 // Here we can use these two functions to test on Postman whether or not it works 
 
+// CREATE
 module.exports.createPet = (req, res) => {
     Adoption.create(req.body)
         .then(newPet => res.json({message: "Success, you submitted a pet", pet: newPet}))
         .catch(err => res.json({message: "Hey, something went worng", error: err}))
 }
 
+// FIND ALL
 module.exports.findAllPets = (req, res) => {
     Adoption.find(req.body)
     .then(allPet => res.json({message: "Success, we found all Pets", pet: allPet}))
     .catch(err => res.json({message: "Hey, something went wrong", error: err}))
 }
 
-module.exports.destroy = (req, res) => {
-    Adoption.remove({_id: req.params.id})
+// DESTROY
+module.exports.destroy = (req, res) => { // We use destroy instead of delete because delete is a keyword
+    Adoption.remove({_id: req.params.id}) // Need to include the id so we can delete that specific one
     .then(res.json({message: "Success, you deleted a pet"}))
     .catch(err => res.json({message: "Hey, something went wrong", error: err}))
 }
 
 // -----------------------------------------------------------------------------------------------
 
+// FIND ONE
 module.exports.findOnePet = (req, res) => {
     Adoption.findOne({_id: req.params.id})
         .then(onePet => res.json({message: "Success, you found one pet", Pet: onePet}))
         .catch(err => res.json({message: "Hey, something went wrong", error: err}))
 }
 
+// UPDATE
 module.exports.updatePet = (req, res) => {
-    Adoption.update({_id: req.params.id}, {
+    Adoption.findByIdAndUpdate({_id: req.params.id}, {
         $set: {
             // Here you can put in any of the other info you are updating from your models
             name: req.body.review
