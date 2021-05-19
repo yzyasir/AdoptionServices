@@ -21,4 +21,4 @@ require("./server/routes/adoption.routes")(app);
 //if I had multiple route files then I have to passs in an (app) for every single one in the require statements in the server
 
 // Step 11) 
-// Now check if it all startes using "npm start"
+// Now check if it all startes using "npm start" (this starts the server, as well as the react scripts)
