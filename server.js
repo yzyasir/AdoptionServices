@@ -22,3 +22,4 @@ require("./server/routes/adoption.routes")(app);
 
 // Step 11) 
 // Now check if it all startes using "npm start" (this starts the server, as well as the react scripts)
+// But to turn on the react portion, cd into the client, but for server just be outside where server.js is located

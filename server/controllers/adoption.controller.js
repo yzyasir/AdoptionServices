@@ -5,18 +5,25 @@ const Adoption = require("../models/adoption.model");
 // -----------------------------------------------------------------------------------------------
 // Here we can use these two functions to test on Postman whether or not it works 
 
-// CREATE
-module.exports.createPet = (req, res) => {
-    Adoption.create(req.body)
-        .then(newPet => res.json({message: "Success, you submitted a pet", pet: newPet}))
-        .catch(err => res.json({message: "Hey, something went worng", error: err}))
-}
-
 // FIND ALL
 module.exports.findAllPets = (req, res) => {
     Adoption.find(req.body)
     .then(allPet => res.json({message: "Success, we found all Pets", pet: allPet}))
     .catch(err => res.json({message: "Hey, something went wrong", error: err}))
+}
+
+// FIND ONE
+module.exports.findOnePet = (req, res) => {
+    Adoption.findOne({_id: req.params.id})
+        .then(onePet => res.json({message: "Success, you found one pet", Pet: onePet}))
+        .catch(err => res.json({message: "Hey, something went wrong", error: err}))
+}
+
+// CREATE
+module.exports.createNewPet = (req, res) => {
+    Adoption.create(req.body)
+        .then(newPet => res.json({pet: newPet}))
+        .catch(err => res.json({message: "Hey, something went worng", error: err}))
 }
 
 // DESTROY
@@ -27,13 +34,6 @@ module.exports.destroy = (req, res) => { // We use destroy instead of delete bec
 }
 
 // -----------------------------------------------------------------------------------------------
-
-// FIND ONE
-module.exports.findOnePet = (req, res) => {
-    Adoption.findOne({_id: req.params.id})
-        .then(onePet => res.json({message: "Success, you found one pet", Pet: onePet}))
-        .catch(err => res.json({message: "Hey, something went wrong", error: err}))
-}
 
 // UPDATE
 module.exports.updatePet = (req, res) => {

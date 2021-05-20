@@ -5,16 +5,26 @@ const mongoose = require("mongoose");
 const adoptionSchema = new mongoose.Schema({
     name:{
         type: String,
-        required:[true, "Add a name for your pet"],
+        required:[true, "Add a name for the adoptee"],
         minlength:[3, "Name needs to be 3 characters long"],
-        maxlength:[12, "Pet name is too long, be reasonable please"]
+        maxlength:[50, "Pet name is too long, be reasonable please"]
     },
     description:{
         type: String,
-        required:[true, "Add a description for your pet"],
+        required:[true, "Add a description for the adoptee"],
         minlength:[5, "Please add a longer description"], 
         maxlength:[50, "Please make the description slightly smaller"]
     },
+    quality:{
+        type: String,
+        required:[true, "Please give the adoptee a quality"],
+        maxlength:[10, "Please keep the quality to one word"]
+    },
+    age:{
+        type: Number, 
+        required:[true, "Please give the adoptee an age"],
+        maxlength:[2, "Please give the adoptee a realistic age"]
+    }
 
 }, {timestamps:true}) //Here we are making time stamps for any of the data we make
 

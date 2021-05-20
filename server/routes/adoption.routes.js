@@ -7,11 +7,11 @@ module.exports = (app) => {
     // app.get("/api/pets", AdoptionController.index)
     //the url word order does matter, if incorrect order it may hit the wrong one or overlook the right one 
 
-    app.post("/api/create/pet", AdoptionController.createPet) // Used to Create Pet
-    app.get("/api/findOne/pet/:id", AdoptionController.findOnePet) // Used for show page
-    app.get("/api/getAll/pet", AdoptionController.findAllPets) // used to find all pets if needed
-    app.delete("/api/deleteOne/pet/:id", AdoptionController.destroy) // when a pet is adopted we will of course delete the posting
-    app.put("/api/update/pet/:id", AdoptionController.updatePet) // can edit the page if needed
+    app.get("/api/pets", AdoptionController.findAllPets) // used to find all pets if needed
+    app.get("/api/pet/:id", AdoptionController.findOnePet) // Used for show page
+    app.post("/api/pet/new", AdoptionController.createNewPet) // Used to Create Pet
+    app.put("/api/pet/update/:id", AdoptionController.updatePet) // can edit the page if needed
+    app.delete("/api/pet/deleteOne/:id", AdoptionController.destroy) // when a pet is adopted we will of course delete the posting
 }
 
 // Step 10)
