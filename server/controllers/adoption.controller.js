@@ -21,6 +21,9 @@ module.exports.findOnePet = (req, res) => {
 
 // CREATE
 module.exports.createNewPet = (req, res) => {
+
+    console.log(`getting name ${req.params.name}`)
+
     Adoption.create(req.body)
         .then(newPet => res.json({pet: newPet}))
         .catch(err => res.json({message: "Hey, something went worng", error: err}))

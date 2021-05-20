@@ -21,7 +21,7 @@ const adoptionSchema = new mongoose.Schema({
         maxlength:[10, "Please keep the quality to one word"]
     },
     age:{
-        type: Number, 
+        type: String, 
         required:[true, "Please give the adoptee an age"],
         maxlength:[2, "Please give the adoptee a realistic age"]
     }

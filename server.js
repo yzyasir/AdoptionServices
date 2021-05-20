@@ -8,16 +8,18 @@
 const express = require('express'),
     app = express(),
     port = 8000,
-    cors = require('cors'),
-    server = app.listen(port, ()=> console.log(`Listening on port ${port}`)); // made a small anon arrow function here
+    cors = require('cors'); 
 
+app.use(express.json(), express.urlencoded({extended: true}));
 app.use(cors());
-app.use(express.json());
+
+app.listen(port, ()=> console.log(`Listening on port ${port}`)) // made a small anon arrow function here
 
 // Step 10)
-// After doing this, we then do our config and routes, and then import here
+// After doing the above, we then do our config and routes, and then import here (which is what we did below)
 require("./server/config/config.database");
-require("./server/routes/adoption.routes")(app); 
+const AllAdopteeRoutes = require("./server/routes/adoption.routes");
+AllAdopteeRoutes(app); 
 //if I had multiple route files then I have to passs in an (app) for every single one in the require statements in the server
 
 // Step 11) 
