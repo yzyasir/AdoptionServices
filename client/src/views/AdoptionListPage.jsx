@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-// import {Link} from '@reach/router';
+import {Link} from '@reach/router';
 
 
 const AdoptionListPage = (props) => {
@@ -17,6 +17,22 @@ const AdoptionListPage = (props) => {
     return(
         <div>
             <h3>These pets are looking for a good home</h3>
+            <Link to=""><p>Create Adoptee</p></Link>
+
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Characteristic</th>
+                    <th>Age</th>
+                </tr>
+                {
+                    adoptee ?
+                    adoptee.map((adoptees, indexValues) => {
+                        <td>{adoptees.name}</td>
+                    }): ""
+                }
+            </table>
         </div>
     )
 
