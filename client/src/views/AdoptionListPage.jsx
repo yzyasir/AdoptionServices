@@ -29,7 +29,9 @@ const AdoptionListPage = (props) => {
                 {
                     adoptee ?
                     adoptee.map((adoptees, indexValues) => {
+                        return <tr>
                         <td>{adoptees.name}</td>
+                    </tr>
                     }): ""
                 }
             </table>
