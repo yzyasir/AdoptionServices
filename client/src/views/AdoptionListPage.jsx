@@ -4,8 +4,10 @@ import {Link} from '@reach/router';
 
 
 const AdoptionListPage = (props) => {
+    // go over the props and what they can do
 
     const [adoptee, setAdoptee] = useState();
+    // make notes on state and setstate a bit more
 
     useEffect(() =>{ 
         axios.get("http://localhost:8000/api/pets")
@@ -18,7 +20,7 @@ const AdoptionListPage = (props) => {
         <div>
             <h3>These pets are looking for a good home</h3>
             <Link to=""><p>Create Adoptee</p></Link>
-
+            {/* todo: need to actually make a link for this, look up how to do that */}
             <table>
                 <tr>
                     <th>Name</th>
