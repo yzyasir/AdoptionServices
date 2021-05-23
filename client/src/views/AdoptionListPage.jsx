@@ -31,8 +31,12 @@ const AdoptionListPage = (props) => {
                 {
                     adoptee ?
                     adoptee.map((adoptees, indexValues) => {
+                        // adoptees is the way to cycle through 
                         return <tr>
                         <td>{adoptees.name}</td>
+                        <td>{adoptees.description}</td>
+                        <td>{adoptees.quality}</td>
+                        <td>{adoptees.age}</td>
                     </tr>
                     }): ""
                 }
