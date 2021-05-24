@@ -1,6 +1,6 @@
 // STEP 5) I did this before step 6 (which is making the form component, but its no big deal really), i just have the functions made and everything ready to pass into the form
 
-import { navigate } from '@reach/router';
+import { navigate, Link } from '@reach/router';
 // we import both navigate and link from reach/router
 
 // need to make a form component and then export, and import it
