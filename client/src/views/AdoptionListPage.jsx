@@ -19,7 +19,7 @@ const AdoptionListPage = (props) => {
     return(
         <div>
             <h3>These pets are looking for a good home</h3>
-            <Link to=""><p>Create Adoptee</p></Link>
+            <Link to="/create/new/adoptee"><p>Create Adoptee</p></Link>
             {/* todo: need to actually make a link for this, look up how to do that */}
             <table>
                 <tr>
