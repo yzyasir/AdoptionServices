@@ -1,9 +1,14 @@
 import './App.css';
 import {Router} from '@reach/router';
 import AdoptionListPage from "./views/AdoptionListPage";
+// Need to import bootstrap from the terminal as a dependency, and then import it into where you are going to use it. 
+// I included it here because of course I will use include everything here.
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
+  // So the neat thing is, if I want something to be displayed on every single page, I can include it here in app.js. Like adding a h3 and creating a title for all pages. 
+  // Not much practicality since all pages are often unique, but can have its uses like a navbar perhaps.
   return (
     <div className="App">
       <Router>

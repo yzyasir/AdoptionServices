@@ -8,6 +8,8 @@ import axios from 'axios';
 import React, {useState} from 'react';
 // Always gotta import React
 
+import Form from '../components/Form';
+
 // Front-End:
 // 5) Here we are making a component in which we can can fit into other files (create, edit)
 // We will be using props to pull necessary functions (from other files like onChange and onSubmit) and values (to connect to the backend, like name and description) 
@@ -66,8 +68,11 @@ const CreateAdoptee = (props) => {
         <div>
             <Link>Go to main page</Link>
             <h3>Know a pet needing a loving home?</h3>
+
             {/* Need to pass oneChangeHandler and onSubmitHandler this way so that they can access it through the use of props */}
             {/* Make a form and put it into here */}
+            <Form onSubmitHandler={onSubmitHandler} form={form} onChangeHandler={onChangeHandler} error={error}/> {/* Need to pass in all the things we need such as out functions, errors, and form */}
+            
         </div>
     )
 }
