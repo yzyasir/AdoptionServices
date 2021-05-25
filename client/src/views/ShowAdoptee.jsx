@@ -23,6 +23,7 @@ const ShowAdoptee = (props) => {
         <div>
             <Link to="/">Go to main page</Link>
             <h3>Details about: {adoptee.name}</h3>
+            <a><button onClick={() => removeAdoptee(props._id)}><h2>Adopt{adoptee.name}</h2></button></a>
             <p>Pet Type: {adoptee.description}</p>
             <p>Pet Quality: {adoptee.quality}</p>
             <p>Pet Age: {adoptee.age}</p>
