@@ -21,7 +21,7 @@ const AdoptionListPage = (props) => {
             <h3>These pets are looking for a good home</h3>
             <Link to="/create/new/adoptee"><p>Create Adoptee</p></Link>
             {/* todo: need to actually make a link for this, look up how to do that */}
-            <table>
+            <table className="table table-bordered">
                 <tr>
                     <th>Name</th>
                     <th>Description</th>

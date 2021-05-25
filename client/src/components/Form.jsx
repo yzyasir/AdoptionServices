@@ -13,7 +13,7 @@ const Form = (props) => {
 
             <div className="col-sm-8"> {/* This takes up 8 of the 12 columns, this will be much larger than the others and its where we will put our form */}
                 
-                <form > {/* This is where we will want to include the functions we made like on submit, its from CreateAdoptee passing it in through props */}
+                <form onSubmit={props.onSubmitHandler}> {/* This is where we will want to include the functions we made like on submit, its from CreateAdoptee passing it in through props */}
                     
                     <div className="form-group"> {/* The FormGroup component is the easiest way to add some structure to forms. It provides a flexible container for grouping of labels, controls, optional help text, and form validation messaging. By default it only applies margin-bottom, but it picks up additional styles in <Form inline > as needed. */}
                         <label>Name</label>
