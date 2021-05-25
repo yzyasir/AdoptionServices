@@ -2,6 +2,8 @@ import './App.css';
 import {Router} from '@reach/router';
 import AdoptionListPage from "./views/AdoptionListPage";
 import CreateAdoptee from "./views/CreateAdoptee";
+import EditAdoptee from "./views/EditAdoptee";
+import ShowAdoptee from "./views/ShowAdoptee";
 // Need to import bootstrap from the terminal as a dependency, and then import it into where you are going to use it. 
 // I included it here because of course I will use include everything here.
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,6 +17,8 @@ function App() {
       <Router>
         <AdoptionListPage path="/" />
         <CreateAdoptee path="/create/new/adoptee" />
+        <EditAdoptee path="/edit/adoptee/:_id"/>
+        <ShowAdoptee path="/shows/adoptee/:_id"/>
       </Router>
     </div>
   );

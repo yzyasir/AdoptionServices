@@ -37,6 +37,7 @@ const AdoptionListPage = (props) => {
                         <td>{adoptees.description}</td>
                         <td>{adoptees.quality}</td>
                         <td>{adoptees.age}</td>
+                        <td><a href={`http://localhost:3000/show/edit/adoptee/${adoptees._id}`}>Edit</a> | <a href={`http://localhost:3000/shows/adoptee/${adoptees._id}`}>Details</a> </td>
                     </tr>
                     }): ""
                 }
