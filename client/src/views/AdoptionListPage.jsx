@@ -31,10 +31,10 @@ const AdoptionListPage = (props) => {
                 {
                     adoptee ?
                     adoptee.map((adoptees, indexValues) => {
-                        // adoptees is the way to cycle through 
+                        // adoptees is the way to cycle through, and the data is targeted by using its name from the db
                         return <tr>
                         <td>{adoptees.name}</td>
-                        <td>{adoptees.description}</td>
+                        <td>{adoptees.description}</td> 
                         <td>{adoptees.quality}</td>
                         <td>{adoptees.age}</td>
                         <td><a href={`http://localhost:3000/show/edit/adoptee/${adoptees._id}`}>Edit</a> | <a href={`http://localhost:3000/shows/adoptee/${adoptees._id}`}>Details</a> </td>
